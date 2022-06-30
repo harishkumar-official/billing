@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+  <Appenders>
+    <Console name="Console-Appender" target="SYSTEM_OUT">
+      <PatternLayout>
+        <pattern>
+          [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+        </pattern>>
+      </PatternLayout>
+    </Console>
+    <File fileName="${log-path}/app.log" name="App-File-Appender">
+      <PatternLayout>
+        <pattern>
+          [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+        </pattern>
+      </PatternLayout>
+    </File>
+    <File fileName="${log-path}/springboot.log" name="SpringBoot-File-Appender">
+      <PatternLayout>
+        <pattern>
+          [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+        </pattern>
+      </PatternLayout>
+    </File>
+  </Appenders>
+  <Loggers>
+    <Logger additivity="false" level="info" name="org.springframework">
+      <AppenderRef ref="SpringBoot-File-Appender"/>
+      <AppenderRef ref="Console-Appender"/>
+    </Logger>
+    <Logger additivity="false" level="info" name="billing">
+      <AppenderRef ref="App-File-Appender"/>
+      <AppenderRef ref="Console-Appender"/>
+    </Logger>
+    <Root>
+      <AppenderRef ref="Console-Appender"/>
+    </Root>
+  </Loggers>
+  <Properties>
+    <Property name="log-path">logs/</Property>
+  </Properties>
+</Configuration>

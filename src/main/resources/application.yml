@@ -1,0 +1,16 @@
+---
+# Spring Configuration
+spring:
+  profiles:
+    active: dev
+
+server:
+  servlet:
+    session:
+      timeout: 30m
+  port: 8080
+  tomcat:
+    max-threads: 1
+    access-log-enabled: true
+    access-log-pattern: "%t lbip=%h identd=%l user=%u status=%s method=%m url=%U bytes=%b duration=%D"
+    use-relative-redirects: true
