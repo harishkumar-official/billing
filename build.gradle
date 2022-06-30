@@ -22,7 +22,8 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web',
             'org.springframework.boot:spring-boot-starter-actuator',
-            'org.springframework.boot:spring-boot-starter-log4j2'
+            'org.springframework.boot:spring-boot-starter-log4j2',
+            'org.apache.kafka:kafka-clients:3.2.0'
 
     // Generators
     compileOnly 'org.projectlombok:lombok:1.18.20'
