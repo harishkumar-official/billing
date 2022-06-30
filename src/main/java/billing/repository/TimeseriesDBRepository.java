@@ -1,8 +1,9 @@
 package billing.repository;
 
 import billing.model.TimeseriesDBEntity;
+import java.util.List;
 
 public interface TimeseriesDBRepository {
 
-  boolean save(String uid, TimeseriesDBEntity record);
+  boolean saveAll(List<TimeseriesDBEntity> records);
 }

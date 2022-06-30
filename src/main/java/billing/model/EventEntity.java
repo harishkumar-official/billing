@@ -4,8 +4,9 @@ import java.util.Map;
 import lombok.Data;
 
 @Data
-public class TimeseriesDBEntity {
+public class EventEntity {
 
+  String uuid;
   Map<String, Object> tags;
   long timestamp;
   String measurementName;
